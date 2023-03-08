@@ -12,7 +12,7 @@ class Courses extends Model
 {
     use HasFactory;
 
-    protected $table = 'courses';
+    protected $table = 'core_courses';
 
     const LEVEL_100            = '100 LEVEL';
     const LEVEL_200            = '200 LEVEL';

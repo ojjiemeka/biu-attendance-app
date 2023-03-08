@@ -3,8 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\Auth\Permission;
-use App\Models\Role;
-use App\Models\User;
+use App\Models\Auth\Role;
+use App\Models\Auth\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -16,50 +16,56 @@ class AuthSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::transaction(function () {
-            $rootRole = Role::create([
+           /* Creating a new role with the name of ROOT, display name of Root-User and description of
+           System Root User. */
+
+        //    DB::table('auth_roles')->insert([
+        //         'name'         => Role::ROOT,
+        //         'display_name' => 'Root-User',
+        //         'description'  => 'System Root User',
+        // ]);
+        
+        
+            Role::create([
                 'name'         => Role::ROOT,
                 'display_name' => 'Root-User',
                 'description'  => 'System Root User',
             ]);
 
-            $adminRole = Role::create([
+            Role::create([
                 'name'         => Role::ADMIN,
                 'display_name' => 'System-Administrator',
                 'description'  => 'System Administrator',
             ]);
 
-            $lecturerRole = Role::create([
+            Role::create([
                 'name'         => Role::LECTURER,
                 'display_name' => 'Lecturer',
                 'description'  => 'Lecturer',
             ]);
 
-            $courseRepRole = Role::create([
+            Role::create([
                 'name'         => Role::COURSE_REP,
                 'display_name' => 'Course Rep',
                 'description'  => 'Course Rep',
             ]);
 
-            $rootPermission = Permission::create([
-                'name'         => Permission::ROOT,
-                'display_name' => 'All Permissions',
-                'description'  => 'All Permissions',
-            ]);
 
-            $rootRole->permissions()->attach($rootPermission->id);
-
+           /* Getting the email address of the admin from the .env file. */
             $admin_email = config('settings.org_admin');
             /**
              * @var User $rootUser
              */
-            $rootUser = User::factory()->create([
-                'email'    => $admin_email,
-                'password' => bcrypt('admin-secret'),
-            ]);
-            $rootUser->roles()->attach([$rootRole->id, $adminRole->id, $lecturerRole->id, $courseRepRole->id]);
-            $rootUser->permissions()->attach([$rootPermission->id]);
 
-        });
+            /* Creating a new user with the email address of the admin and the password of
+            admin-secret. */
+            // User::create([
+            //     'email'    => $admin_email,
+            //     'password' => bcrypt('admin-secret'),
+            // ]);
+
+        //    /* Attaching the roles and permissions to the root user. */
+        //     $rootUser->roles()->attach([$rootRole->id, $adminRole->id, $lecturerRole->id, $courseRepRole->id]);
+        //     $rootUser->permissions()->attach([$rootPermission->id]);
     }
 }

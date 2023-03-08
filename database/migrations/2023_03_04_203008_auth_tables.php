@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('auth_users', function (Blueprint $table) {
+            $table->id();
             $table->string('first_name');
             $table->string('middle_name');
             $table->string('last_name');
@@ -40,40 +40,56 @@ return new class extends Migration
         });
 
         Schema::create('auth_role_user', function (Blueprint $table) {
-            $table->foreignId('role_id');
-            $table->foreignId('user_id');
+            $table->id('id');
+            $table->integer('role_id');
+            $table->integer('user_id');
 
-            $table->foreign('role_id', 'ru_rid')->references('id')->on('auth_roles')
-                  ->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('user_id', 'ru_uid')->references('id')->on('auth_users')
-                  ->onUpdate('cascade')->onDelete('cascade');
-
-            $table->unique(['user_id', 'role_id'], 'rs_uid_rid');
         });
 
-        Schema::create('auth_permission_user', function (Blueprint $table) {
-            $table->foreignId('permission_id');
-            $table->foreignId('user_id');
+        // Schema::table('auth_role_user', function (Blueprint $table) {
+        //     $table->foreign('role_id')
+        //           ->references('id')
+        //           ->on('auth_roles')
+        //           ->onDelete('cascade');
 
-            $table->foreign('permission_id', 'pu_pid')->references('id')->on('auth_permissions')
-                  ->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('user_id', 'pu_uid')->references('id')->on('auth_users')
-                  ->onUpdate('cascade')->onDelete('cascade');
+        //     $table->foreign('user_id')
+        //           ->references('id')
+        //           ->on('auth_users')
+        //           ->onDelete('cascade');
+        // });
 
-            $table->unique(['user_id', 'permission_id']);
-        });
+        // Schema::create('auth_role_user', function (Blueprint $table) {
+            
+        //     $table->foreign('role_id')->references('id')->on('auth_roles');
+        //     $table->foreign('user_id')->references('id')->on('auth_users');
 
-        Schema::create('auth_permission_role', function (Blueprint $table) {
-            $table->foreignId('permission_id');
-            $table->foreignId('role_id');
 
-            $table->foreign('permission_id', 'pr_pid')->references('id')->on('auth_permissions')
-                  ->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('role_id', 'pr_rid')->references('id')->on('auth_roles')
-                  ->onUpdate('cascade')->onDelete('cascade');
+        //     // $table->unique(['user_id', 'role_id'], 'rs_uid_rid');
+        // });
 
-            $table->primary(['permission_id', 'role_id'], 'pr_pk');
-        });
+        // Schema::create('auth_permission_user', function (Blueprint $table) {
+        //     $table->foreignId('permission_id')->references('id')->on('auth_permissions');
+        //     $table->foreignId('user_id')->references('id')->on('auth_users');
+
+        //     // $table->foreign('permission_id', 'pu_pid')->references('id')->on('auth_permissions')
+        //     //       ->onUpdate('cascade')->onDelete('cascade');
+        //     // $table->foreign('user_id', 'pu_uid')->references('id')->on('auth_users')
+        //     //       ->onUpdate('cascade')->onDelete('cascade');
+
+        //     // $table->unique(['user_id', 'permission_id']);
+        // });
+
+        // Schema::create('auth_permission_role', function (Blueprint $table) {
+        //     $table->foreignId('permission_id')->references('id')->on('auth_permissions');
+        //     $table->foreignId('role_id')->references('id')->on('auth_roles');
+
+        //     // $table->foreign('permission_id', 'pr_pid')->references('id')->on('auth_permissions')
+        //     //       ->onUpdate('cascade')->onDelete('cascade');
+        //     // $table->foreign('role_id', 'pr_rid')->references('id')->on('auth_roles')
+        //     //       ->onUpdate('cascade')->onDelete('cascade');
+
+        //     // $table->primary(['permission_id', 'role_id'], 'pr_pk');
+        // });
 
         Schema::create('auth_sessions', function (Blueprint $table) {
             $table->string('id')->primary();

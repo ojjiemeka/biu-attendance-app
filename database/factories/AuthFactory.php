@@ -2,7 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
 /**
@@ -10,6 +12,8 @@ use Illuminate\Support\Str;
  */
 class AuthFactory extends Factory
 {
+    protected $model = User::class;
+
     /**
      * Define the model's default state.
      *
@@ -23,14 +27,14 @@ class AuthFactory extends Factory
         $length = 10;
 
         return [
-            'first_name'        => $faker->first_name(),
-            'middle_name'       => $faker->middle_name(),
-            'last_name'         => $faker->last_name(),
-            'phone'             => $this->faker->numerify('080########'),
+            'first_name'        => $faker->firstName(),
+            'middle_name'       => $faker->name(),
+            'last_name'         => $faker->lastName(),
+            'phone'             => $faker->numerify('080########'),
             'email'             => $faker->unique()->safeEmail(),
             'username'          => $faker->unique()->userName,
-            'email'             => $this->faker->unique()->safeEmail(),
-            'password'          => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'email'             => $faker->unique()->safeEmail(),
+            'password'          => Hash::make('admin123'), // password
             'remember_token'    => Str::random(10),
             'phone_verified_at' => now(),
             'email_verified_at' => now(),

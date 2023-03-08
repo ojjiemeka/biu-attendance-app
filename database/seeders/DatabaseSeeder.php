@@ -1,7 +1,8 @@
 <?php
 
 namespace Database\Seeders;
-
+use App\Models\Role;
+use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -18,7 +19,7 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        $this->call(AuthSeeder::class);
+        // $this->call(AuthSeeder::class);
         $this->call(CoreSeeder::class);
         
     }

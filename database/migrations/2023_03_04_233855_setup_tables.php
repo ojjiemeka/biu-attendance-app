@@ -51,6 +51,7 @@ return new class extends Migration
             $table->id();
             $table->uuid();
             $table->foreignId('course_id');
+            $table->foreignId('lecturer_id');
             $table->string('first_name');
             $table->string('middle_name');
             $table->string('last_name');
