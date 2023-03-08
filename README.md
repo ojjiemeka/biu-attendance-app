@@ -3,13 +3,13 @@
 <ul>
     <li>Clone the project using "https://github.com/ojjiemeka/biu-attendance-app.git"</li>
 
-    <li> Run "npm install" to install node dependies</li>
+    Run "npm install" to install node dependies
 
-    <li>Run "Composer Install"</li>
+    Run "Composer Install"
 
-    <li>Run "php artisan serve" to serve the project</li>
+    Run "php artisan serve" to serve the project
 
-    <li>Run "npm run dev" to load the pages</li>
+    Run "npm run dev" to load the pages
 
 </ul>
 
@@ -18,14 +18,10 @@
 <ul>
     <p>After you run the last 2 commands it should serve on a server like "http://127.0.0.1:8001 - Localhost"</p>
 
-    <li>    http://127.0.0.1:8001 - default page that loads when the project serves, 
-            it's also the login page   
-    </li>
+        http://127.0.0.1:8001 - default page that loads when the project serves, it's also the login page   
 
-    <li>    Localhost/signup - Register Page    </li>
+        Localhost/signup - Register Page
 
-    <li>    Localhost/password/reset - Password Reset Page  </li>
-
-    <li></li>
+        Localhost/password/reset - Password Reset Page
 
 </ul>
