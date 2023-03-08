@@ -3,7 +3,7 @@
 <ul>
     <li>Clone the project using "https://github.com/ojjiemeka/biu-attendance-app.git"</li>
 
-    Run "npm install" to install node dependies
+    Run "npm install" to install node dependiencies
 
     Run "Composer Install"
 
