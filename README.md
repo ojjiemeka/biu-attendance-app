@@ -3,7 +3,11 @@
 <ul>
     <li>Clone the project using "https://github.com/ojjiemeka/biu-attendance-app.git"</li>
 
-    Run "npm install" to install node dependiencies
+    Open the project in VSCode
+    
+    Open Terminal
+    
+    Run "npm install" insid to install node dependiencies
 
     Run "Composer Install"
 
