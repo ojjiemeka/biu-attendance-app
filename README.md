@@ -1,11 +1,13 @@
 <h1>Installation</h1>
 
 <ul>
-    <li>Clone the project using "https://github.com/ojjiemeka/biu-attendance-app.git"</li>
+    <li>Clone the project into the htdocs folder in XAMPP (for windows users) "https://github.com/ojjiemeka/biu-attendance-app.git"</li>
 
-    Run "npm install" to install node dependiencies
+    open the project in VSCode
 
-    Run "Composer Install"
+    Run "npm install" in terminal to install node dependiencies
+
+    Run "Composer Install" to install composer dependencies
 
     Run "php artisan serve" to serve the project
 
@@ -20,8 +22,19 @@
 
         http://127.0.0.1:8001 - default page that loads when the project serves, it's also the login page   
 
-        Localhost/signup - Register Page
+        Localhost/signup - go to Register Page
 
-        Localhost/password/reset - Password Reset Page
+        Localhost/password/reset - go to Password Reset Page
+
+        Localhost/calender - go to Calender
+
+        Localhost/settings - go to Settings
+
+        Localhost/profile - go to Profile
+
+        Localhost/lecturers - go to Lecturers
+
+        Localhost/lecturers - go to Profile
+
 
 </ul>

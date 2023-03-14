@@ -34,6 +34,9 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/calender', [PagesController::class, 'activityPlanner'])->name('calender');
+Route::get('/settings', [PagesController::class, 'settings'])->name('settings');
+Route::get('/profile', [PagesController::class, 'profile'])->name('profile');
+// Route::get('/logout', [PagesController::class, 'logout'])->name('logout');
 Route::resource('courses', CourseController::class);
 Route::resource('lecturers', LecturerController::class);
 Route::resource('calenders', CalenderController::class);

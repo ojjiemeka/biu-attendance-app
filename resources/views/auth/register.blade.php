@@ -22,7 +22,7 @@
                         </div>
                 
                             <div class="p-2">
-                                <form class="needs-validation" novalidate action="https://themesbrand.com/skote/layouts/index.html">
+                                <form class="needs-validation" novalidate action="/home">
         
                                     
             
