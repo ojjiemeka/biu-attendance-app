@@ -27,7 +27,7 @@ use Illuminate\Support\Facades\Auth;
 // });
 
 Route::get('/', [LoginController::class, 'showLoginPage'])->name('signin');
-Route::get('/signup', [RegisterController::class, 'showRegisterPage'])->name('signup');
+// Route::get('/signup', [RegisterController::class, 'showRegisterPage'])->name('signup');
 
 
 Auth::routes();

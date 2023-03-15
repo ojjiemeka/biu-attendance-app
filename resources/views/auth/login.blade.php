@@ -79,7 +79,7 @@
                     <div class="mt-5 text-center">
                         
                         <div>
-                            <p>Don't have an account ? <a href="{{route('signup')}}" class="fw-medium text-primary"> Signup now </a> </p>
+                            <p>Don't have an account ? <a href="{{route('register')}}" class="fw-medium text-primary"> Signup now </a> </p>
                             
                         </div>
                     </div>
