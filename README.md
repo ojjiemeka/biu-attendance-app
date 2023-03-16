@@ -5,6 +5,12 @@
 
     open the project in VSCode
 
+    Open the project in VSCode
+    
+    Open Terminal
+    
+    Run "npm install" insid to install node dependiencie
+
     Run "npm install" in terminal to install node dependiencies
 
     Run "Composer Install" to install composer dependencies
@@ -55,4 +61,6 @@
         Localhost/lecturers - go to Lecturers
 
         Localhost/profile - go to Profile
+</ul>
+
 </ul>
