@@ -15,6 +15,26 @@
 
 </ul>
 
+<ul>
+    <li>**Some of the pages are route protected meaning you cant access them without a login**</li>
+
+    - create DB called "biu_test"
+
+    - run php artisan migrate to run DB migrations and create necessary colums and tables
+
+    - create an account on register link
+       
+        NB: register link is partially broken, so you might recieve an error
+
+    - check DB to confirm if record was created
+
+    - signin with created details to access the routes bwlow
+
+        NB: ADMIN LOGINS WILL BE CREATED WHEN ROLES & PERMISSIONS ARE COMPLETED
+
+
+</ul>
+
 <h1>Route Links</h1>
 
 <ul>
@@ -34,7 +54,5 @@
 
         Localhost/lecturers - go to Lecturers
 
-        Localhost/lecturers - go to Profile
-
-
+        Localhost/profile - go to Profile
 </ul>
