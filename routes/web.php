@@ -27,15 +27,22 @@ use Illuminate\Support\Facades\Auth;
 // });
 
 Route::get('/', [LoginController::class, 'showLoginPage'])->name('signin');
-Route::get('/signup', [RegisterController::class, 'showRegisterPage'])->name('signup');
+// Route::get('/signup', [RegisterController::class, 'showRegisterPage'])->name('signup');
 
 
-Auth::routes();
+// Auth::routes();
+Route::middleware(['auth'])->group(function () {
+    Route::get('/home', [PagesController::class, 'home'])->name('home');
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::get('/calender', [PagesController::class, 'activityPlanner'])->name('calender');
-Route::resource('courses', CourseController::class);
-Route::resource('lecturers', LecturerController::class);
-Route::resource('calenders', CalenderController::class);
-Route::resource('attendances', AttendanceController::class);
+    Route::get('/calender', [PagesController::class, 'activityPlanner'])->name('calender');
+    Route::get('/settings', [PagesController::class, 'settings'])->name('settings');
+    Route::get('/profile', [PagesController::class, 'profile'])->name('profile');
+    // Route::get('/logout', [PagesController::class, 'logout'])->name('logout');
+    Route::resource('courses', CourseController::class);
+    Route::resource('lecturers', LecturerController::class);
+    Route::resource('calenders', CalenderController::class);
+    Route::resource('attendances', AttendanceController::class);
+});
+
+
 

@@ -12,7 +12,9 @@ class AttendanceController extends Controller
      */
     public function index()
     {
-        //
+        return view('pages.admin.attendance.manage');
+        // echo ('works');
+
     }
 
     /**

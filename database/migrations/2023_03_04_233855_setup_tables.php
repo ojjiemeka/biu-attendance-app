@@ -1,6 +1,8 @@
 <?php
 
-use App\Models\Auth\Lecturer;
+// use App\Models\Auth\Lecturer;
+
+use App\Models\Lecturer;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -51,13 +53,15 @@ return new class extends Migration
             $table->id();
             $table->uuid();
             $table->foreignId('course_id');
-            $table->foreignId('lecturer_id');
+            $table->json('lecturer_id');
             $table->string('first_name');
             $table->string('middle_name');
             $table->string('last_name');
             $table->char('mat_number', 15);
             $table->string('department');
             $table->string('faculty');
+            $table->string('level');
+            // $table->('timestamp');
             $table->softDeletes();
             $table->timestamps();
         });

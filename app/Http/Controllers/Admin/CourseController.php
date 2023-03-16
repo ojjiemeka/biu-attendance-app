@@ -12,8 +12,11 @@ class CourseController extends Controller
      */
     public function index()
     {
-        //
+        return view('pages.courses.view');
+        // echo ('works');
     }
+
+    
 
     /**
      * Show the form for creating a new resource.

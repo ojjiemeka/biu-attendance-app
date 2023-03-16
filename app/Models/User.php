@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Support\Str;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -24,7 +25,6 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array<int, string>
      */
     protected $fillable = [
-        'uuid',
         'first_name',
         'middle_name',
         'last_name',
@@ -32,8 +32,6 @@ class User extends Authenticatable implements MustVerifyEmail
         'phone',
         'username',
         'password',
-        'phone_verified_at',
-        'email_verified_at',
     ];
 
     /**
@@ -42,6 +40,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array<int, string>
      */
     protected $hidden = [
+        'uuid',
         'password',
         'remember_token',
         'two_factor_recovery_codes',
@@ -69,5 +68,13 @@ class User extends Authenticatable implements MustVerifyEmail
             $this->middle_name,
             $this->last_name,
         ]);
+    }
+
+    public function generateUserName(){
+        $fn = Str::upper(Str::substr($this->first_name, 0, 1));
+        $ln = Str::upper(Str::substr($this->last_name, 0, 1));
+        $num = Str::random(4);
+
+        return $fn.$ln.$num;
     }
 }
