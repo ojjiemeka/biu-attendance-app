@@ -7,24 +7,50 @@ use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function home()
+    {
+        $title = 'dashboard';
+        return view('pages.home', [
+            'title' => $title
+        ]);
+    }
+
     public function activityPlanner()
     {
-        return view('pages.calender');
+        $title = 'activity planner';
+        return view('pages.calender',[
+            'title' => $title
+        ]);
     }
 
     public function calender()
     {
-        return view('pages.admin.calender');
+        $title = 'calender';
+        return view('pages.admin.calender',[
+            'title' => $title
+        ]);
     }
     
     public function settings()
     {
-        return view('pages.admin.settings');
+        $title = 'settings';
+        return view('pages.admin.settings',[
+            'title' => $title
+        ]);
     }
 
     public function profile()
     {
-        return view('pages.admin.profile');
+        $title = 'profile';
+        return view('pages.admin.profile',[
+            'title' => $title
+        ]);
     }
 
     // public function ()
