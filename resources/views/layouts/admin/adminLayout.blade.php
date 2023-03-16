@@ -16,19 +16,19 @@
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/icons.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/app.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/libs/admin-resources/rwd-table/rwd-table.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet" type="text/css">
+    {{-- <link href="{{ asset('assets/libs/admin-resources/rwd-table/rwd-table.min.css') }}" rel="stylesheet"> --}}
+    {{-- <link href="{{ asset('assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/libs/%40fullcalendar/core/main.min.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/libs/%40fullcalendar/daygrid/main.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/libs/%40fullcalendar/bootstrap/main.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/libs/%40fullcalendar/timegrid/main.min.css') }}" rel="stylesheet" type="text/css" />
-        <!-- Responsive Table js -->
-        <script src="{{asset('assets/libs/admin-resources/rwd-table/rwd-table.min.js')}}"></script>
+        <!-- Responsive Table js --> --}}
+        {{-- <script src="{{asset('assets/libs/admin-resources/rwd-table/rwd-table.min.js')}}"></script> --}}
 
         <!-- Init js -->
-        <script src="{{asset('assets/js/pages/table-responsive.init.js')}}"></script>
+        {{-- <script src="{{asset('assets/js/pages/table-responsive.init.js')}}"></script> --}}
     <script src="{{ asset('assets/libs/jquery/jquery.min.js') }}" defer></script>
     <script src="{{ asset('assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}" defer></script>
     <script src="{{ asset('assets/libs/metismenu/metisMenu.min.js') }}" defer></script>
@@ -37,10 +37,10 @@
     
 
     <!-- Scripts -->
-    @vite([
+    {{-- @vite([
         // 'resources/sass/app.scss', 
         'resources/js/app.js'
-        ])
+        ]) --}}
 </head>
 <body data-sidebar="dark" data-layout-mode="light">
     {{-- <main class="py-4"> --}}
@@ -55,9 +55,9 @@
 
 <script src="{{ asset('assets/js/app.js') }}" defer></script>
     <!-- plugin js -->
-    <script src="{{ asset('assets/libs/moment/min/moment.min.js') }}" defer></script>
+    {{-- <script src="{{ asset('assets/libs/moment/min/moment.min.js') }}" defer></script> --}}
     <script src="{{ asset('assets/libs/jquery-ui-dist/jquery-ui.min.js') }}" defer></script>
-    <script src="{{ asset('assets/libs/%40fullcalendar/core/main.min.js') }}" defer></script>
+    {{-- <script src="{{ asset('assets/libs/%40fullcalendar/core/main.min.js') }}" defer></script>
     <script src="{{ asset('assets/libs/%40fullcalendar/bootstrap/main.min.js') }}" defer></script>
     <script src="{{ asset('assets/libs/%40fullcalendar/daygrid/main.min.js') }}" defer></script>
     <script src="{{ asset('assets/libs/%40fullcalendar/timegrid/main.min.js') }}" defer></script>
@@ -84,7 +84,7 @@
     <script src="{{ asset('assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js') }}"></script>
 
     <!-- Datatable init js -->
-    <script src="{{ asset('assets/js/pages/datatables.init.js') }}"></script>  
+    <script src="{{ asset('assets/js/pages/datatables.init.js') }}"></script>   --}}
 
 </body>
 </html>

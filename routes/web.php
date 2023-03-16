@@ -30,9 +30,10 @@ Route::get('/', [LoginController::class, 'showLoginPage'])->name('signin');
 // Route::get('/signup', [RegisterController::class, 'showRegisterPage'])->name('signup');
 
 
-Auth::routes();
+// Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
 Route::get('/calender', [PagesController::class, 'activityPlanner'])->name('calender');
 Route::get('/settings', [PagesController::class, 'settings'])->name('settings');
 Route::get('/profile', [PagesController::class, 'profile'])->name('profile');

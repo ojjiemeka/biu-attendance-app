@@ -21,6 +21,8 @@
     </div>
 </div> --}}
 
+
+
 <!-- Begin page -->
 <!-- ============================================================== -->
     <!-- Start right Content here -->
@@ -55,7 +57,11 @@
                                 <div class="row">
                                     <div class="col-7">
                                         <div class="text-primary p-3">
-                                            <h5 class="text-primary">Welcome Back !</h5>
+                                            <h5 class="text-primary">
+                                                @if (Auth::check())
+                                                    Welcome, {{ Auth::user()->first_name }}!
+                                                @endif
+                                            </h5>
                                             <p>Skote Dashboard</p>
                                         </div>
                                     </div>
@@ -750,3 +756,7 @@
 
 <!-- END layout-wrapper -->
 @endsection
+
+@push('js')
+    <script src="{{ asset('assets/js/pages/profile.init.js')}}"></script>
+@endpush
