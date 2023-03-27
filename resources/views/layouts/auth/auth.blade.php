@@ -25,10 +25,7 @@
     <script src="{{ asset('assets/js/app.js') }}" defer></script>
 
     <!-- Scripts -->
-    @vite([
-        // 'resources/sass/app.scss', 
-        'resources/js/app.js'
-        ])
+   
 </head>
 <body>
     <div id="app">

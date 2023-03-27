@@ -33,6 +33,7 @@ Route::get('/', [LoginController::class, 'showLoginPage'])->name('signin');
 // Auth::routes();
 Route::middleware(['auth'])->group(function () {
     Route::get('/home', [PagesController::class, 'home'])->name('home');
+    Route::get('/routes', [PagesController::class, 'routes'])->name('routes');
 
     Route::get('/calender', [PagesController::class, 'activityPlanner'])->name('calender');
     Route::get('/settings', [PagesController::class, 'settings'])->name('settings');

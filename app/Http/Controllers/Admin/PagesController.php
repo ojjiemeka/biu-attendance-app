@@ -53,9 +53,9 @@ class PagesController extends Controller
         ]);
     }
 
-    // public function ()
-    // {
-    //     return view('');
-    // }
+    public function routes()
+    {
+        return view('pages.routes');
+    }
 
 }
